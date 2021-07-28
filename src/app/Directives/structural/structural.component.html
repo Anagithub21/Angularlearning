@@ -1,0 +1,49 @@
+<p>structural works!</p>
+
+<button (click)="changeme()">Changemee</button>
+<div *ngIf="iamtrue; else elsepart">
+    I am true part
+</div>
+
+<ng-template #elsepart>
+    I am false part
+</ng-template>
+
+<li *ngFor="let user of users; index as i; first as isFirst;last as islast;even as iseven;odd as isodd">
+    {{i}}/{{users.length}}. {{user}} <span *ngIf="isFirst">default</span>
+    <span *ngIf="islast">Last one</span><span *ngIf="iseven">Even one</span><span *ngIf="isodd">odd one</span>
+  </li>
+
+  <span>with trackby</span>
+  
+  <div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Annual Salary</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <!--  -->
+            <tr *ngFor='let employee of employees ; trackBy:trackByEmpCode'>
+                <td>{{employee.code}}</td>
+                <td>{{employee.name}}</td>
+                <td>{{employee.gender}}</td>
+                <td>{{employee.salary}}</td>
+
+            </tr>
+            <tr *ngIf="!employees || employees.length==0">
+                <td colspan="5">
+                    No employees to display
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <button class="btn btn-primary" (click)='getEmployees()'>Refresh Employees</button>
+
+</div>

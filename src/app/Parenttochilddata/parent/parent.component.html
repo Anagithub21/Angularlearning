@@ -1,0 +1,12 @@
+<p>parent Component!</p>
+
+<app-child [item1]="message"></app-child>
+<app-child (msgEmit)="receivemessage($event)"></app-child>
+{{message1}}
+
+<div>
+    <app-greet>
+        <h1>I am h1 tag from parent</h1>
+        <h3>I am h3 from Parent</h3>
+    </app-greet>
+</div>

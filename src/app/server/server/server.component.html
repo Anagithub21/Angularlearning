@@ -1,0 +1,31 @@
+<h3>String Interpolation</h3>
+<p>server wit ID {{id}} AND NAME {{name}} status is {{getserverstatus()}}</p>
+
+<h3>Property Binding</h3>
+
+<button class="btn btn-primary" [disabled]="allownewServer">Allow Server</button>
+
+<h3>Event Binding</h3>
+<button (click)="showdata()">{{event}}</button>
+
+<h3>Two way binding</h3>
+<input type="text" [(ngModel)]="name" />
+
+<h3>ngIf with elsee</h3>
+<div *ngIf="isLoggedIn; else loggedOut">
+    Welcome back, friend.
+</div>
+
+<ng-template #loggedOut>
+    Please friend, login.
+</ng-template>
+
+<h3>styling with ngClass</h3>
+<p [ngStyle]="{color:getcolor()}">Hello sir</p>
+
+<h3>Ngclass</h3>
+<p [ngClass]="event == true? 'my_class1' : 'my_class2'">Hello hello!!</p>
+
+<h3>NgFor</h3>
+<li *ngFor="let data of myarr;let i=index">
+    {{data.name}}{{i}}</li>
